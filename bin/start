@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if [ -z ${NODE_ENV} ]; then
     NODE_ENV=development
