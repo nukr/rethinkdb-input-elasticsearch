@@ -1,0 +1,15 @@
+api:
+  build: .
+  volumes:
+    - "./src:/opt/app/src"
+  links:
+    - "rethinkdb:rethinkdb"
+    - "elasticsearch:elasticsearch"
+rethinkdb:
+  image: rethinkdb
+  ports:
+    - "8080:8080"
+elasticsearch:
+  image: elasticsearch
+  ports:
+    - "9200:9200"
