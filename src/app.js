@@ -1,10 +1,9 @@
-import dbs from './dbs'
-// import elasticsearch from 'elasticsearch'
-// let client = new elasticsearch.Client({host: 'elasticsearch:9200'})
+import DB from './db'
+
+const db = new DB()
 
 ;(async () => {
-  await dbs.init()
-  // let result = await client.indices.delete({index: 'test'})
+  await db.init()
 })().catch((err) => {
   console.log('*********************************')
   console.log(err)

@@ -5,7 +5,7 @@ if [ -z ${NODE_ENV} ]; then
 fi
 
 if [ ${NODE_ENV} == "development" ]; then
-    pm2 start app.json --no-daemon
+    pm2-dev start app.json
 else
     node ./babel-register.js
 fi
