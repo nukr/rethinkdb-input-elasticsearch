@@ -1,4 +1,4 @@
-FROM nukr/alpine-node:5.4.1
+FROM nukr/alpine-node:5.7.1
 MAINTAINER nukr <nukrs.w@gmail.com>
 
 # http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/
