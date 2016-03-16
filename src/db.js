@@ -113,7 +113,8 @@ async function processData (db, table, data) {
       index: db,
       type: table,
       id: data.new_val.id,
-      body: data.new_val
+      body: data.new_val,
+      parent: data.new_val.__parent
     })
     console.log(result)
   } else if (data.new_val) {
