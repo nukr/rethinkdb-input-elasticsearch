@@ -134,7 +134,8 @@ async function processData (db, table, data) {
     let result = await client.delete({
       index: db,
       type: table,
-      id: data.old_val.id
+      id: data.old_val.id,
+      parent: data.old_val.__parent
     })
     console.log(result)
   }
