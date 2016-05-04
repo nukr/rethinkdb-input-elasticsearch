@@ -1,0 +1,17 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _rethinkdbdash = require('rethinkdbdash');
+
+var _rethinkdbdash2 = _interopRequireDefault(_rethinkdbdash);
+
+var _config = require('./config');
+
+var _config2 = _interopRequireDefault(_config);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = (0, _rethinkdbdash2.default)({ host: _config2.default.rethinkdb.host });

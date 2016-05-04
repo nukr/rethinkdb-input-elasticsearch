@@ -1,4 +1,5 @@
 import elasticsearch from 'elasticsearch'
+import config from './config'
 import r from './r'
 
 /**
@@ -50,7 +51,7 @@ export default class DB {
       if (err) throw Error(err)
       console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@', data)
       let { name: dbName } = data.new_val
-      let client = new elasticsearch.Client({host: 'elasticsearch:9200'})
+      let client = new elasticsearch.Client({host: `${config.elasticsearch.host}:${config.elasticsearch.port}`})
       await client.indices.create({index: dbName})
     })
 
@@ -104,7 +105,7 @@ class Table {
 }
 
 async function processData (db, table, data) {
-  let client = new elasticsearch.Client({host: 'elasticsearch:9200'})
+  let client = new elasticsearch.Client({host: `${config.elasticsearch.host}:${config.elasticsearch.port}`})
 
   if (data.new_val && data.old_val) {
     // update

@@ -1,4 +1,4 @@
-FROM nukr/alpine-node:5.10.1
+FROM nukr/alpine-node:6.0.0
 MAINTAINER nukr <nukrs.w@gmail.com>
 
 # http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/
@@ -6,10 +6,8 @@ COPY package.json /tmp/package.json
 RUN cd /tmp && npm install
 RUN mkdir -p /opt/app && cp -a /tmp/node_modules /opt/app/
 
-RUN ln -s ../src /opt/app/node_modules/src
 WORKDIR /opt/app
 COPY . /opt/app
-EXPOSE 3000
 
 # Run app
-CMD ["node", "/opt/app/src"]
+CMD ["node", "/opt/app/dist/app.js"]
