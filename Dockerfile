@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:6.2.2
+FROM mhart/alpine-node:6.3.1
 MAINTAINER nukr <nukrs.w@gmail.com>
 
 RUN apk add --no-cache curl

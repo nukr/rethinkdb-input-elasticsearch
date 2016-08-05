@@ -24,6 +24,7 @@
     "koa": "^2.0.0-alpha.3",
     "koa-logger": "^2.0.0",
     "koa-router": "^7.0.0",
+    "lodash": "^4.14.1",
     "node-uuid": "^1.4.7",
     "rethinkdbdash": "^2.2.17"
   }
