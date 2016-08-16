@@ -109,7 +109,7 @@ async function processData (db, table, data) {
 
   if (data.new_val && data.old_val) {
     // update
-
+    console.log(`database ${db} table ${table} id ${data.new_val.id} on data update`)
     let result = await client.index({
       index: db,
       type: table,
@@ -120,7 +120,7 @@ async function processData (db, table, data) {
     console.log(result)
   } else if (data.new_val) {
     // create data
-    console.log(`database ${db} table ${table} on data create`)
+    console.log(`database ${db} table ${table} id ${data.new_val.id} on data create`)
     let result = await client.create({
       index: db,
       type: table,
@@ -131,7 +131,7 @@ async function processData (db, table, data) {
     console.log(result)
   } else if (data.old_val) {
     // delete data
-    console.log(`database ${db} table ${table} on data delete`)
+    console.log(`database ${db} table ${table} id ${data.old_val.id} on data delete`)
     let result = await client.delete({
       index: db,
       type: table,
